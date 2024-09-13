@@ -81,13 +81,11 @@ function filterOut(arr1, arr2) {
   if(arr1.length === 0) return null;
   
   let newArray = []
-    for (let i = 0; i<arr1.length; i++) {
-      for(let j = 0; j < arr2.length; j++) {
-        if(arr1.includes(arr2[j])) {
-          arr1.splice(arr1.indexOf(arr2[j]), 1);
-      } else newArray.push(arr1[i])
-      }
+  arr1.forEach((word) => {
+    if(!arr2.includes(word)) {
+      newArray.push(word)
     }
+  })
   
   
   return newArray
